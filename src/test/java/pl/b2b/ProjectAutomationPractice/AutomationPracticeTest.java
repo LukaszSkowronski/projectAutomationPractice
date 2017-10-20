@@ -11,38 +11,31 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class AutomationPracticeTest {
 
 	private WebDriver driver;
+	LoginPage LoginPage = new LoginPage();
+	DefaultPage DefaultPage = new DefaultPage();
 
 	@Before
-	public void init() {
+
+	public void createBrowserInstanceNavigateToURL() {
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 	}
 
-	// @Test
-	// public void verifyWarningMessageAfterIncorrectSearch() {
-	//
-	// }
 	@Test
-	public void successfulLogin() {
-		Utils.pushSignInButton(driver);
-		Utils.enterEmail(driver);
-		Utils.enterPassword(driver);
-		Utils.pushSignInButtonAfterEnteringEmailAndPassword(driver);
-		Utils.getSuccessfulLogonMessage(driver);
-		assertEquals("Welcome to your account. Here you can manage all of your personal information and orders.",
-				Utils.getSuccessfulLogonMessage(driver));
-
+	public void incorrectEmailLoginPage() {
+		DefaultPage.clickButtonSignIn();
+		LoginPage.enterEmail("incorrectEmail@test.com");
+		LoginPage.enterPassword("n3tw0rk2017");
+		assertEquals("There is 1 error\n" + "Invalid email address.", LoginPage.getWarningIncorrectLoginDetails());
 	}
-	
+
 	@Test
-	public void unsuccessfulLoginIncorrectEmailWarningMessage() {
-		Utils.pushSignInButton(driver);
-		Utils.enterIncorrectEmail(driver);
-		Utils.pushSignInButtonAfterEnteringEmailAndPassword(driver);
-		Utils.getWarningIncorrectEmailMessage(driver);
-		assertEquals("There is 1 error\n"+
-				"Password is required.", Utils.getWarningIncorrectEmailMessage(driver));
+	public void incorrectPasswordLoginPage() {
+		DefaultPage.clickButtonSignIn();
+		LoginPage.enterEmail("b2bnetworkwarszawa@gmail.com");
+		LoginPage.enterPassword("incorrectpassword");
+		assertEquals("There is 1 error\n" + "Authentication failed.", LoginPage.getWarningIncorrectLoginDetails());
 	}
 
 	@After
