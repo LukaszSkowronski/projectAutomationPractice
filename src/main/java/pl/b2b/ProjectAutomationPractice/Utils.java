@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Utils {
 
@@ -22,5 +24,12 @@ public class Utils {
 		} catch (NullPointerException e) {
 			System.out.println("User not Logged!");
 		}
+	}
+	
+	public static String waitForElementVisible(String xpath) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement element = wait.until(
+		        ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+		return null;
 	}
 }

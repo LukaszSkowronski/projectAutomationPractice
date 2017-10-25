@@ -22,7 +22,7 @@ public class LoginPageTest {
 	@Test
 	public void incorrectEmailLoginPage() {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
-		DefaultPage.clickButtonSignIn(driver);
+		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.enterEmail("!email", driver);
 		LoginPageLogic.enterPassword("n3tw0rk2017", driver);
 		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
@@ -32,7 +32,7 @@ public class LoginPageTest {
 	@Test
 	public void incorrectPasswordLoginPage() {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
-		DefaultPage.clickButtonSignIn(driver);
+		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
 		LoginPageLogic.enterPassword("!password", driver);
 		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
@@ -42,7 +42,7 @@ public class LoginPageTest {
 	@Test
 	public void missingEmailLoginPage() {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
-		DefaultPage.clickButtonSignIn(driver);
+		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.enterEmail("", driver);
 		LoginPageLogic.enterPassword("n3tw0rk2017", driver);
 		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
@@ -53,7 +53,7 @@ public class LoginPageTest {
 	@Test
 	public void missingPasswordLoginPage() {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
-		DefaultPage.clickButtonSignIn(driver);
+		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
 		LoginPageLogic.enterPassword("", driver);
 		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
@@ -63,7 +63,7 @@ public class LoginPageTest {
 	@Test
 	public void successfulLogin() {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
-		DefaultPage.clickButtonSignIn(driver);
+		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
 		LoginPageLogic.enterPassword("n3tw0rk2017", driver);
 		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
@@ -73,11 +73,21 @@ public class LoginPageTest {
 	@Test
 	public void incorrectEmailCreateAnAccount () {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
-		DefaultPage.clickButtonSignIn(driver);
+		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.clickEnterEmailCreateAnAccount(driver);
 		LoginPageLogic.enterEmailCreateAnAccount("!email", driver);
 		LoginPageLogic.clickButtonCreateAnAccount(driver);
 		assertEquals("Invalid email address.", LoginPageLogic.getIncorrectEmailMessageAccountCreation(driver));
+	}
+	
+	@Test
+	public void successfulEmailAccountCreation() {
+		Utils.verifyUserLoggedOffIfNotClickSignOut();
+		DefaultPageLogic.clickButtonSignIn(driver);
+		LoginPageLogic.clickEnterEmailCreateAnAccount(driver);
+		LoginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
+		LoginPageLogic.clickButtonCreateAnAccount(driver);
+		assertEquals(true, CreateAnAccountLogic.verifyRegisterButtonIsVisible(driver));
 	}
 
 	@AfterClass

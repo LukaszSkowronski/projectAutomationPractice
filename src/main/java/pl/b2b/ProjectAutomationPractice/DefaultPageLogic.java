@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class DefaultPage {
+public class DefaultPageLogic {
 
 	public static void clickButtonSignIn(WebDriver driver) {
 		WebElement signInButton = driver.findElement(By.partialLinkText("Sign"));

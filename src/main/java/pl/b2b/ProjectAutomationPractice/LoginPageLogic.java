@@ -30,7 +30,7 @@ public class LoginPageLogic {
 	}
 	
 	public static String getIncorrectEmailMessageAccountCreation(WebDriver driver) {
-		WebElement incorrectAccountCreationMessage = driver.findElement(By.xpath("//*[@id=\"create_account_error\"]/ol/li"));
+		WebElement incorrectAccountCreationMessage = driver.findElement(By.xpath("//*[@id='create_account_error']"));
 		return incorrectAccountCreationMessage.getText().trim();
 		
 	}
