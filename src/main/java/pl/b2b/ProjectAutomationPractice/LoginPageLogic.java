@@ -1,7 +1,5 @@
 package pl.b2b.ProjectAutomationPractice;
 
-import java.sql.Driver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +19,7 @@ public class LoginPageLogic {
 	}
 	
 	public static String enterEmailCreateAnAccount(String email, WebDriver driver) {
-		WebElement fieldEnterEmailCreateAnAccount = driver.findElement(By.xpath("//*[@id=\"SubmitCreate\"]/span"));
+		WebElement fieldEnterEmailCreateAnAccount = driver.findElement(By.id("email_create"));
 		fieldEnterEmailCreateAnAccount.sendKeys(email);
 		return email;
 	}
