@@ -71,23 +71,22 @@ public class LoginPageTest {
 	}
 	
 	@Test
-	public void incorrectEmailCreateAnAccount () {
+	public void incorrectEmailCreateAnAccount () throws InterruptedException {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
 		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.clickEnterEmailCreateAnAccount(driver);
 		LoginPageLogic.enterEmailCreateAnAccount("!email", driver);
 		LoginPageLogic.clickButtonCreateAnAccount(driver);
 		assertEquals("Invalid email address.", LoginPageLogic.getIncorrectEmailMessageAccountCreation(driver));
 	}
 	
 	@Test
-	public void successfulEmailAccountCreation() {
+	public void successfulEmailAccountCreation() throws InterruptedException {
 		Utils.verifyUserLoggedOffIfNotClickSignOut();
 		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.clickEnterEmailCreateAnAccount(driver);
 		LoginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
 		LoginPageLogic.clickButtonCreateAnAccount(driver);
-		assertEquals(true, CreateAnAccountLogic.verifyRegisterButtonIsVisible(driver));
+		Thread.sleep(10000);
+		assertEquals(true, CreateAnAccountLogic.verifyRegisterButtonIsVisible());
 	}
 
 	@AfterClass

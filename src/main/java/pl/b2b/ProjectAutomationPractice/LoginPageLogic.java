@@ -29,8 +29,9 @@ public class LoginPageLogic {
 		return incorrectLoginMessage.getText().trim();
 	}
 	
-	public static String getIncorrectEmailMessageAccountCreation(WebDriver driver) {
-		WebElement incorrectAccountCreationMessage = driver.findElement(By.xpath("//*[@id='create_account_error']"));
+	public static String getIncorrectEmailMessageAccountCreation(WebDriver driver) throws InterruptedException {
+		Thread.sleep(1000);
+		WebElement incorrectAccountCreationMessage = driver.findElement(By.id("create_account_error"));
 		return incorrectAccountCreationMessage.getText().trim();
 		
 	}
@@ -45,8 +46,4 @@ public class LoginPageLogic {
 		createAnAcountButton.click();
 	}
 	
-	public static void clickEnterEmailCreateAnAccount(WebDriver driver) {
-		WebElement enterEmailCreateAnAccount = driver.findElement(By.xpath("//*[@id='SubmitCreate']/span"));
-		enterEmailCreateAnAccount.click();	
-	}
 }
