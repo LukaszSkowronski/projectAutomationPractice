@@ -16,6 +16,7 @@ public class CreateAnAccountTest {
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
+		driver.manage().window().maximize();
 	}
 	
 	@Test
@@ -26,7 +27,8 @@ public class CreateAnAccountTest {
 		LoginPageLogic.clickButtonCreateAnAccount(driver);
 		CreateAnAccountLogic.selectGenderRadioButton("2", driver); // "1" - Mr, "2" - Mrs
 		CreateAnAccountLogic.enterFirstName("Lukasz", driver);
-		CreateAnAccountLogic.enterDOB("11/11/1995", driver);
+		CreateAnAccountLogic.selectDOB("11/11/1995", driver);
+		CreateAnAccountLogic.selectState("Alabama", driver);
 	}
 	
 //	@AfterClass

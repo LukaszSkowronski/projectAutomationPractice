@@ -52,22 +52,77 @@ public class CreateAnAccountLogic {
 		fieldPassword.sendKeys(firstName);
 	}
 
-	public static void enterDOB (String DOB, WebDriver driver) { // DD/MM/YYYY format of DOB
-		String dayDOB = DOB.substring(0,2);
-		String monthDOB = DOB.substring(3,5);
-		String yearDOB = DOB.substring(6,10);
-		if(DOB.isEmpty()) {
-			System.out.println("DOB not provided!");
-		}
-		else {
-			if(dayDOB) {
-			WebElement dayOfBirth = driver.findElement(By.id("days"));
-			Select d = new Select (dayOfBirth);
-			d.selectByValue(dayDOB);
+	public static void selectDOB (String DOB, WebDriver driver) { // DD/MM/YYYY format of DOB
+		try{
+			int dayDOB = Integer.parseInt(DOB.substring(0,2));
+			int monthDOB = Integer.parseInt(DOB.substring(3,5));
+			int yearDOB = Integer.parseInt(DOB.substring(6,10));
+			if(dayDOB > 0 && dayDOB <32) {
+				WebElement dayOfBirth = driver.findElement(By.id("days"));
+				Select d = new Select (dayOfBirth);
+				String dayDOBString = String.valueOf(dayDOB);
+				d.selectByValue(dayDOBString);
 			}
-			else {
-				System.out.println("Day of birth not provided!");
+			if(monthDOB > 0 && monthDOB <13) {
+				WebElement monthOfBirth = driver.findElement(By.id("months"));
+				Select m = new Select (monthOfBirth);
+				String monthDOBString = String.valueOf(monthDOB);
+				m.selectByValue(monthDOBString);
 			}
+			if(yearDOB > 1899 && yearDOB <2017) {
+				WebElement yearOfBirth = driver.findElement(By.id("years"));
+				Select y = new Select (yearOfBirth);
+				String yearDOBString = String.valueOf(yearDOB);
+				y.selectByValue(yearDOBString);
+			}
+		}catch(NumberFormatException nfe) {
+			System.out.println("Day of birth not provided or incorrect!");
+		}catch(StringIndexOutOfBoundsException sioobe) {
+			System.out.println("Day of birth not provided or incorrect!");
+			}
+			
 		}
+	
+	public static void enterFirstNameAddress(String firstNameAddress, WebDriver driver) {
+		WebElement fieldPassword = driver.findElement(By.id("firstname"));
+		fieldPassword.clear();
+		fieldPassword.sendKeys(firstNameAddress);
 	}
-}
+	
+	public static void enterLastNameAddress(String lastNameAddress, WebDriver driver) {
+		WebElement fieldPassword = driver.findElement(By.id("lastname"));
+		fieldPassword.clear();
+		fieldPassword.sendKeys(lastNameAddress);
+	}
+	
+	public static void enterCompany(String company, WebDriver driver) {
+		WebElement fieldPassword = driver.findElement(By.id("company"));
+		fieldPassword.clear();
+		fieldPassword.sendKeys(company);
+	}
+	
+	public static void enterAddressLine1(String addressLine1, WebDriver driver) {
+		WebElement fieldPassword = driver.findElement(By.id("address1"));
+		fieldPassword.clear();
+		fieldPassword.sendKeys(addressLine1);
+	}
+	
+	public static void enterAddressLine2(String addressLine2, WebDriver driver) {
+		WebElement fieldPassword = driver.findElement(By.id("address2"));
+		fieldPassword.clear();
+		fieldPassword.sendKeys(addressLine2);
+	}
+	
+	public static void enterCity(String city, WebDriver driver) {
+		WebElement fieldPassword = driver.findElement(By.id("city"));
+		fieldPassword.clear();
+		fieldPassword.sendKeys(city);
+	}
+	
+	public static void selectState(String state, WebDriver driver) {
+		WebElement stateDropdown = driver.findElement(By.id("id_state"));
+		Select s = new Select (stateDropdown);
+		s.selectByVisibleText(state);
+	}
+			
+	}
