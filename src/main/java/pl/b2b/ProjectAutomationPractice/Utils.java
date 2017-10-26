@@ -11,9 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Utils {
 
-	private static WebDriver driver;
 
-	public static void verifyUserLoggedOffIfNotClickSignOut() {
+	public static void verifyUserLoggedOffIfNotClickSignOut(WebDriver driver) {
 		try {
 			WebElement signInButton = driver.findElement(By.className("login"));
 			String loginStatus = signInButton.getText().toString().trim();
@@ -28,7 +27,7 @@ public class Utils {
 		}
 	}
 
-	public static boolean waitForAjax() {
+	public static boolean waitForAjax(WebDriver driver) {
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
@@ -55,7 +54,7 @@ public class Utils {
 		return wait.until(jQueryLoad) && wait.until(jsLoad);
 	}
 	
-	public static String waitForElementVisible(String id) {
+	public static String waitForElementVisible(String id, WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement element = wait.until(
 		        ExpectedConditions.visibilityOfElementLocated(By.id(id)));

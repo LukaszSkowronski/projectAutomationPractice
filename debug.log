@@ -1,0 +1,62 @@
+[1026/214610.710:ERROR:process_info.cc(632)] range at 0xa4222f3c00000000, size 0xb3 fully unreadable
+[1026/214610.721:ERROR:process_info.cc(632)] range at 0xa4222fa000000000, size 0xb3 fully unreadable
+[1026/214610.721:ERROR:process_info.cc(632)] range at 0x0, size 0xb3 fully unreadable
+[1026/214610.847:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb3090000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.847:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\WINMMBASE.dll
+[1026/214610.847:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb30c0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.847:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\WINMM.dll
+[1026/214610.847:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb7c60000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\profapi.dll
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb7310000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\USERENV.dll
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcae9f0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\WINHTTP.dll
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb7ac0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\bcryptPrimitives.dll
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb7b30000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\CRYPTBASE.DLL
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb61d0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\shcore.dll
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb8820000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.848:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\ole32.dll
+[1026/214610.848:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb8660000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\OLEAUT32.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcba900000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\NSI.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcba3f0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\WS2_32.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb7d10000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\MSASN1.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb7db0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\CRYPT32.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb8160000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\WINTRUST.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb55b0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.849:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.18006_none_623f33d3ecbe86e8\COMCTL32.dll
+[1026/214610.849:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb8290000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\system32\COMDLG32.dll
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcaeca0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\dbghelp.dll
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb13c0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\USP10.dll
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb2de0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\WINSPOOL.DRV
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb3c20000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\WINNSI.DLL
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb3400000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\IPHLPAPI.DLL
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb5230000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\Secur32.dll
+[1026/214610.850:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb0ad0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.850:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\iertutil.dll
+[1026/214610.851:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb0760000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.851:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\WININET.dll
+[1026/214610.851:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb0da0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.851:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\urlmon.dll
+[1026/214610.851:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffcb4d80000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.851:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Windows\SYSTEM32\DWrite.dll
+[1026/214610.851:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffc878d0000 of 64 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.851:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\62.0.3202.62\chrome_child.dll
+[1026/214610.904:ERROR:process_reader_win.cc(242)] ReadMemory at 0xb3a4024000 of 49152 bytes failed: Ukoñczono tylko czêœæ ¿¹dania ReadProcessMemory lub WriteProcessMemory. (0x12B)
+[1026/214610.904:ERROR:crash_report_exception_handler.cc(116)] WriteEverything failed
+[1026/214610.909:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie.  (0xc000010a)

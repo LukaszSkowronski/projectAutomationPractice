@@ -19,17 +19,18 @@ public class CreateAnAccountTest {
 	}
 	
 	@Test
-	public void titleFieldValidation() throws InterruptedException {
-		Utils.verifyUserLoggedOffIfNotClickSignOut();
+	public void successfulCreateAnAccount() throws InterruptedException {
+		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
 		DefaultPageLogic.clickButtonSignIn(driver);
 		LoginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
 		LoginPageLogic.clickButtonCreateAnAccount(driver);
-		Thread.sleep(5000);
-		CreateAnAccountLogic.selectGenderRadioButton("Mr.");
+		CreateAnAccountLogic.selectGenderRadioButton("2", driver); // "1" - Mr, "2" - Mrs
+		CreateAnAccountLogic.enterFirstName("Lukasz", driver);
+		CreateAnAccountLogic.enterDOB("11/11/1995", driver);
 	}
 	
-	@AfterClass
-	public static void close() {
-		driver.close();
-	}
+//	@AfterClass
+//	public static void close() {
+//		driver.close();
+//	}
 }
