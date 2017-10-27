@@ -7,11 +7,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class LoginPageTest {
-
-	private static WebDriver driver;
-
+public class LoginPageTest extends Methods{
+	
+	defaultPageLogic defaultPageLogic = PageFactory.initElements(driver, defaultPageLogic.class);
+	loginPageLogic loginPageLogic = PageFactory.initElements(driver, loginPageLogic.class);
+	defaultPageUserLoggedLogic defaultPageUserLoggedLogic = PageFactory.initElements(driver, defaultPageUserLoggedLogic.class);
+	
 	@BeforeClass
 	public static void createBrowserInstanceNavigateToURL() {
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
@@ -22,75 +25,75 @@ public class LoginPageTest {
 
 	@Test
 	public void incorrectEmailLoginPage() {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmail("!email", driver);
-		LoginPageLogic.enterPassword("n3tw0rk2017", driver);
-		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn();
+		loginPageLogic.enterEmail("!email", driver);
+		loginPageLogic.enterPassword("n3tw0rk2017", driver);
+		loginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
 		assertEquals("There is 1 error\n" + "Invalid email address.",
-				LoginPageLogic.getIncorretLoginDetailsMessage(driver));
+				loginPageLogic.getIncorretLoginDetailsMessage(driver));
 	}
 
 	@Test
 	public void incorrectPasswordLoginPage() {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
-		LoginPageLogic.enterPassword("!password", driver);
-		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn(driver);
+		loginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
+		loginPageLogic.enterPassword("!password", driver);
+		loginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
 		assertEquals("There is 1 error\n" + "Authentication failed.",
-				LoginPageLogic.getIncorretLoginDetailsMessage(driver));
+				loginPageLogic.getIncorretLoginDetailsMessage(driver));
 	}
 
 	@Test
 	public void missingEmailLoginPage() {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmail("", driver);
-		LoginPageLogic.enterPassword("n3tw0rk2017", driver);
-		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn();
+		loginPageLogic.enterEmail("", driver);
+		loginPageLogic.enterPassword("n3tw0rk2017", driver);
+		loginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
 		assertEquals("There is 1 error\n" + "An email address required.",
-				LoginPageLogic.getIncorretLoginDetailsMessage(driver));
+				loginPageLogic.getIncorretLoginDetailsMessage(driver));
 	}
 
 	@Test
 	public void missingPasswordLoginPage() {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
-		LoginPageLogic.enterPassword("", driver);
-		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn(driver);
+		loginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
+		loginPageLogic.enterPassword("", driver);
+		loginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
 		assertEquals("There is 1 error\n" + "Password is required.",
-				LoginPageLogic.getIncorretLoginDetailsMessage(driver));
+				loginPageLogic.getIncorretLoginDetailsMessage(driver));
 	}
 
 	@Test
 	public void successfulLogin() {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
-		LoginPageLogic.enterPassword("n3tw0rk2017", driver);
-		LoginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn(driver);
+		loginPageLogic.enterEmail("b2bnetworkwarszawa@gmail.com", driver);
+		loginPageLogic.enterPassword("n3tw0rk2017", driver);
+		loginPageLogic.clickButtonSignInAfterProvidingLoginDetails(driver);
 		assertEquals("Welcome to your account. Here you can manage all of your personal information and orders.",
-				DefaultPageUserLoggedLogic.getSuccessfulLoginMessage(driver));
+				defaultPageUserLoggedLogic.getSuccessfulLoginMessage(driver));
 	}
 
 	@Test
 	public void incorrectEmailCreateAnAccount() throws InterruptedException {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmailCreateAnAccount("!email", driver);
-		LoginPageLogic.clickButtonCreateAnAccount(driver);
-		assertEquals("Invalid email address.", LoginPageLogic.getIncorrectEmailMessageAccountCreation(driver));
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn(driver);
+		loginPageLogic.enterEmailCreateAnAccount("!email", driver);
+		loginPageLogic.clickButtonCreateAnAccount(driver);
+		assertEquals("Invalid email address.", loginPageLogic.getIncorrectEmailMessageAccountCreation(driver));
 	}
 
 	@Test
 	public void successfulEmailAccountCreation() throws InterruptedException {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
-		LoginPageLogic.clickButtonCreateAnAccount(driver);
-		Utils.waitForElementVisible("submitAccount", driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn(driver);
+		loginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
+		loginPageLogic.clickButtonCreateAnAccount(driver);
+		Methods.waitForElementVisible("submitAccount", driver);
 		assertEquals(true, CreateAnAccountLogic.verifyRegisterButtonIsVisible(driver));
 	}
 

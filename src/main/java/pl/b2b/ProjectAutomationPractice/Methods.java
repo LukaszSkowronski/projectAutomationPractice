@@ -9,8 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Utils {
-
+public class Methods {
+	
+	public static WebDriver driver;
 
 	public static void verifyUserLoggedOffIfNotClickSignOut(WebDriver driver) {
 		try {

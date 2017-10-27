@@ -21,10 +21,10 @@ public class CreateAnAccountTest {
 	
 	@Test
 	public void successfulCreateAnAccount() throws InterruptedException {
-		Utils.verifyUserLoggedOffIfNotClickSignOut(driver);
-		DefaultPageLogic.clickButtonSignIn(driver);
-		LoginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
-		LoginPageLogic.clickButtonCreateAnAccount(driver);
+		Methods.verifyUserLoggedOffIfNotClickSignOut(driver);
+		defaultPageLogic.clickButtonSignIn(driver);
+		loginPageLogic.enterEmailCreateAnAccount("test@testt.pl", driver);
+		loginPageLogic.clickButtonCreateAnAccount(driver);
 		CreateAnAccountLogic.selectGenderRadioButton("2", driver); // "1" - Mr, "2" - Mrs
 		CreateAnAccountLogic.enterFirstName("Lukasz", driver);
 		CreateAnAccountLogic.selectDOB("11/11/1995", driver);

@@ -15,7 +15,7 @@ public class CreateAnAccountLogic {
 	}
 
 	public static String selectGenderRadioButton(String genderNumber, WebDriver driver) {
-		Utils.waitForElementVisible("id_gender1", driver);
+		Methods.waitForElementVisible("id_gender1", driver);
 		List<WebElement> genderList = driver.findElements(By.name("id_gender"));
 		for (WebElement radioText : genderList) {
 			if (radioText.getAttribute("id").endsWith(genderNumber)) {
