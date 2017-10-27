@@ -58,6 +58,24 @@ public class CreateAnAccountLogic extends Methods{
 	
 	@FindBy(id = "years")
 	private WebElement dobYears;
+	
+	@FindBy(id = "postcode")
+	private WebElement postcode;
+	
+	@FindBy(id = "id_country")
+	private WebElement countryDropdown;
+	
+	@FindBy(id = "other")
+	private WebElement additionalInformation;
+	
+	@FindBy(id = "phone")
+	private WebElement homePhone;
+	
+	@FindBy(id = "phone_mobile")
+	private WebElement mobilePhone;
+	
+	@FindBy(id = "alias")
+	private WebElement addressAlias;
 
 	public boolean verifyRegisterButtonIsVisible() {
 		return this.buttonRegister.isEnabled();
@@ -109,8 +127,38 @@ public class CreateAnAccountLogic extends Methods{
 	}
 
 	public void selectState(String state) {
-		Select s = new Select(this.stateDropdown);
+		Select s = new Select(stateDropdown);
 		s.selectByVisibleText(state);
+	}
+	
+	public void enterPostcode(String postcode) {
+		this.postcode.clear();
+		this.postcode.sendKeys(postcode);
+	}
+	
+	public void selectCountry(String country) {
+		Select s = new Select(countryDropdown);
+				s.deselectByVisibleText(country);
+	}
+	
+	public void enterAdditionalInformation(String addInfo) {
+		this.additionalInformation.clear();
+		this.additionalInformation.sendKeys(addInfo);
+	}
+	
+	public void enterHomePhone(String homePhone) {
+		this.homePhone.clear();
+		this.homePhone.sendKeys(homePhone);
+	}
+	
+	public void enterMobilePhone(String mobilePhone) {
+		this.mobilePhone.clear();
+		this.mobilePhone.sendKeys(mobilePhone);
+	}
+	
+	public void enterAddressAlias(String addressAlias) {
+		this.addressAlias.clear();
+		this.addressAlias.sendKeys(addressAlias);
 	}
 
 	public String selectGenderRadioButton(String genderNumber) {
