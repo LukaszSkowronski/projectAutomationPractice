@@ -1,6 +1,5 @@
 package pl.b2b.ProjectAutomationPractice;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -27,33 +26,34 @@ public class loginPageLogic {
 	@FindBy(xpath = "//*[@id='SubmitCreate']/span")
 	private WebElement buttonCreateAnAccount;
 
-	public void enterEmail(String email, WebDriver driver) {
+	public void enterEmail(String email) {
 		this.email.sendKeys(email);
 	}
 
-	public void enterPassword(String password, WebDriver driver) {
+	public void enterPassword(String password) {
 		this.password.sendKeys(password);
 	}
 
-	public void enterEmailCreateAnAccount(String email, WebDriver driver) {
+	public void enterEmailCreateAnAccount(String email) {
 		this.emailCreate.sendKeys(email);
 	}
 
-	public String getIncorretLoginDetailsMessage(WebDriver driver) {
+	public String getIncorretLoginDetailsMessage() {
 		return this.incorretLoginDetailsMessage.getText().trim();
 	}
 
-	public String getIncorrectEmailMessageAccountCreation(WebDriver driver) throws InterruptedException {
+	public String getIncorrectEmailMessageAccountCreation() throws InterruptedException {
 		Thread.sleep(1000);
 		return this.incorrectEmailMessageAccountCreation.getText().trim();
 	}
 
-	public void clickButtonSignInAfterProvidingLoginDetails(WebDriver driver) {
+	public void clickButtonSignInAfterProvidingLoginDetails() {
 		this.buttonSignInAfterProvidingLoginDetails.click();
 	}
 
-	public void clickButtonCreateAnAccount(WebDriver driver) {
+	public void clickButtonCreateAnAccount() throws InterruptedException {
 		this.buttonCreateAnAccount.click();
+		Thread.sleep(3000);
 	}
 
 }

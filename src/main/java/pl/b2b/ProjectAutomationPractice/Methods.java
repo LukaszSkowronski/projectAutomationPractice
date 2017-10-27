@@ -6,14 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Methods {
 	
 	public static WebDriver driver;
 
-	public static void verifyUserLoggedOffIfNotClickSignOut(WebDriver driver) {
+	public static void verifyUserLoggedOffIfNotClickSignOut() {
 		try {
 			WebElement signInButton = driver.findElement(By.className("login"));
 			String loginStatus = signInButton.getText().toString().trim();
@@ -28,7 +27,7 @@ public class Methods {
 		}
 	}
 
-	public static boolean waitForAjax(WebDriver driver) {
+	public static boolean waitForAjax() {
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
@@ -55,10 +54,4 @@ public class Methods {
 		return wait.until(jQueryLoad) && wait.until(jsLoad);
 	}
 	
-	public static String waitForElementVisible(String id, WebDriver driver) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement element = wait.until(
-		        ExpectedConditions.visibilityOfElementLocated(By.id(id)));
-		return element.toString();
-	}
 }
